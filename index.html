@@ -1,4 +1,39 @@
-Contador
+<!-- Contador
 Informe uma data
 DD/MM/AAAA
-Iniciar contagem
+Iniciar contagem -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevChallenge| Contador</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="background">
+        <p>Contador</p>
+        <div class="container">
+            <div class="input">
+                Informe uma data:
+                <input id="in_data" type="date" placeholder="DD/MM/AAAA">
+                <button onclick="armazenarData()">
+                    Iniciar contagem
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function armazenarData() {
+        sessionStorage.DATA = in_data.value;
+
+        trocarParaContador()
+        
+    }
+    function trocarParaContador() {
+        window.location = "contador.html"
+    }
+</script>

@@ -1,4 +1,64 @@
-Contador
+<!-- Contador
 Reiniciar
 Faltam
-Dias Horas Minutos Segundos
+Dias Horas Minutos Segundos -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevChallenge| Contador</title>
+
+    <link rel="stylesheet" href="css/contador.css">
+</head>
+<body>
+    <div class="header">
+        <p>
+        Contador
+        </p>
+        <button onclick = reset() >
+            Reiniciar
+        </button>
+    </div>
+
+    <p id="faltam">FALTAM</p>
+    <div class="container">
+        <div class="dias">
+            <p class="numero">
+            0
+            </p>
+            dias
+        </div>
+        <div class="horas">
+            <p class="numero">
+                0
+                </p>
+                horas
+        </div>
+        <div class="minutos">
+            <p class="numero">
+                0
+                </p>
+                minutos
+        </div>
+        <div class="segundos">
+            <p class="numero">
+                0
+                </p>
+                segundos
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const diaAlvo = Number(sessionStorage.DATA.at(8)+ sessionStorage.DATA.at(9));
+    const mesAlvo = Number(sessionStorage.DATA.at(5)+ sessionStorage.DATA.at(6));
+    const anoAlvo = Number(sessionStorage.DATA.at(0)+ sessionStorage.DATA.at(1) + sessionStorage.DATA.at(2)+ sessionStorage.DATA.at(3));
+    
+    console.log(diaAlvo, mesAlvo, anoAlvo);
+
+    function reset() {
+        window.location = "index.html"
+    }
+</script>
