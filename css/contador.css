@@ -7,6 +7,7 @@
     font-family: 'Roboto';
     font-size: 36px;
     border: black solid 0;
+    color: #ebb400;
 }
 
 body {
@@ -47,6 +48,14 @@ body {
     justify-content: space-evenly;
 }
 
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .numero {
+    color: white;
     font-size: 150px;
 }

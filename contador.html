@@ -12,7 +12,7 @@ Dias Horas Minutos Segundos -->
 
     <link rel="stylesheet" href="css/contador.css">
 </head>
-<body>
+<body onload="setarData()">
     <div class="header">
         <p>
         Contador
@@ -24,26 +24,26 @@ Dias Horas Minutos Segundos -->
 
     <p id="faltam">FALTAM</p>
     <div class="container">
-        <div class="dias">
-            <p class="numero">
+        <div class="cont">
+            <p id="dias" class="numero">
             0
             </p>
             dias
         </div>
-        <div class="horas">
-            <p class="numero">
+        <div class="cont">
+            <p id="horas" class="numero">
                 0
                 </p>
                 horas
         </div>
-        <div class="minutos">
-            <p class="numero">
+        <div class="cont">
+            <p id="minutos" class="numero">
                 0
                 </p>
                 minutos
         </div>
-        <div class="segundos">
-            <p class="numero">
+        <div class="cont">
+            <p id="segundos" class="numero">
                 0
                 </p>
                 segundos
@@ -58,7 +58,72 @@ Dias Horas Minutos Segundos -->
     
     console.log(diaAlvo, mesAlvo, anoAlvo);
 
+    let dataHoje = new Date;
+    const dataAlvo = new Date (mesAlvo + '/' + diaAlvo + '/' + anoAlvo);
+
     function reset() {
         window.location = "index.html"
     }
+    function setarData() {
+        dataHoje = new Date;
+
+        diffSegundosDatas = (dataAlvo - dataHoje)/1000;
+        // Segundos / Qtd de Segundos por dia = Qtd dias
+        diffSegundosDatas = diffSegundosDatas/86400;
+        dias.innerHTML = Math.trunc(diffSegundosDatas);
+        // Pegar o resto
+        diffSegundosDatas = diffSegundosDatas - Math.trunc(diffSegundosDatas);
+        
+        // Resto * 24 = Qtd de Horas
+        diffSegundosDatas = diffSegundosDatas * 24;
+        horas.innerHTML = Math.trunc(diffSegundosDatas);
+        diffSegundosDatas = diffSegundosDatas - Math.trunc(diffSegundosDatas);
+
+        // Resto * 60 = Qtd de Minutos
+        diffSegundosDatas = diffSegundosDatas * 60;
+        minutos.innerHTML = Math.trunc(diffSegundosDatas);
+        diffSegundosDatas = diffSegundosDatas - Math.trunc(diffSegundosDatas);
+        
+        // Resto * 60 = Qtd de Segundos
+        diffSegundosDatas = diffSegundosDatas * 60;
+        segundos.innerHTML = Math.trunc(diffSegundosDatas);
+
+        // diffDiasDatas = ((dataAlvo - dataHoje)/(1000*3600*24));
+        // dias.innerHTML = Math.trunc(diffDiasDatas);
+        // diffDiasDatas = diffDiasDatas - Math.trunc(diffDiasDatas);
+        
+        
+        // diffHorasDatas = diffDiasDatas * 24;
+        // horas.innerHTML = Math.trunc(diffHorasDatas);
+        // diffHorasDatas = diffHorasDatas - Math.trunc(diffHorasDatas);
+
+        
+        // diffMinutosDatas = diffHorasDatas * 60;
+        // minutos.innerHTML = Math.trunc(diffMinutosDatas);
+        // diffMinutosDatas = diffMinutosDatas - Math.trunc(diffMinutosDatas);
+        
+        // diffSegundosDatas = diffHorasDatas * 60;
+        // segundos.innerHTML = Math.trunc(diffSegundosDatas);
+
+        
+        setTimeout(() => {
+            setarData()
+        }, 1000);
+        
+        // iniciarContagem();
+
+    }
+    // function iniciarContagem() {
+    //     diffSegundosDatas = (dataAlvo - dataHoje)/1000;
+    //     diffMinutosDatas = ((dataAlvo - dataHoje)%1000)/60;
+    //     diffHorasDatas = (((dataAlvo - dataHoje)%1000)%60)/60;
+    //     diffDiasDatas = ((((dataAlvo - dataHoje)%1000)%60)%60)/60;
+
+    //     console.log(diffSegundosDatas, diffMinutosDatas, diffHorasDatas, diffDiasDatas);
+
+        // dias.innerHTML = ;
+        // horas.innerHTML = ;
+        // minutos.innerHTML =;
+        // segundos.innerHTML =;
+    // }
 </script>
