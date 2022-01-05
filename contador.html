@@ -11,6 +11,7 @@ Dias Horas Minutos Segundos -->
     <title>DevChallenge| Contador</title>
 
     <link rel="stylesheet" href="css/contador.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1248/1248769.png" type="image/x-icon">
 </head>
 <body onload="setarData()">
     <div class="header">
@@ -87,43 +88,10 @@ Dias Horas Minutos Segundos -->
         // Resto * 60 = Qtd de Segundos
         diffSegundosDatas = diffSegundosDatas * 60;
         segundos.innerHTML = Math.trunc(diffSegundosDatas);
-
-        // diffDiasDatas = ((dataAlvo - dataHoje)/(1000*3600*24));
-        // dias.innerHTML = Math.trunc(diffDiasDatas);
-        // diffDiasDatas = diffDiasDatas - Math.trunc(diffDiasDatas);
-        
-        
-        // diffHorasDatas = diffDiasDatas * 24;
-        // horas.innerHTML = Math.trunc(diffHorasDatas);
-        // diffHorasDatas = diffHorasDatas - Math.trunc(diffHorasDatas);
-
-        
-        // diffMinutosDatas = diffHorasDatas * 60;
-        // minutos.innerHTML = Math.trunc(diffMinutosDatas);
-        // diffMinutosDatas = diffMinutosDatas - Math.trunc(diffMinutosDatas);
-        
-        // diffSegundosDatas = diffHorasDatas * 60;
-        // segundos.innerHTML = Math.trunc(diffSegundosDatas);
-
         
         setTimeout(() => {
             setarData()
         }, 1000);
-        
-        // iniciarContagem();
 
     }
-    // function iniciarContagem() {
-    //     diffSegundosDatas = (dataAlvo - dataHoje)/1000;
-    //     diffMinutosDatas = ((dataAlvo - dataHoje)%1000)/60;
-    //     diffHorasDatas = (((dataAlvo - dataHoje)%1000)%60)/60;
-    //     diffDiasDatas = ((((dataAlvo - dataHoje)%1000)%60)%60)/60;
-
-    //     console.log(diffSegundosDatas, diffMinutosDatas, diffHorasDatas, diffDiasDatas);
-
-        // dias.innerHTML = ;
-        // horas.innerHTML = ;
-        // minutos.innerHTML =;
-        // segundos.innerHTML =;
-    // }
 </script>
