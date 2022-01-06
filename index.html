@@ -4,6 +4,7 @@ DD/MM/AAAA
 Iniciar contagem -->
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,18 +13,20 @@ Iniciar contagem -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1248/1248769.png" type="image/x-icon">
 </head>
+
 <body>
-        <p>Contador</p>
-        <div class="container">
-            <div class="input">
-                Informe uma data:
-                <input id="in_data" type="date" placeholder="DD/MM/AAAA">
-                <button onclick="armazenarData()">
-                    Iniciar contagem
-                </button>
-            </div>
+    <p>Contador</p>
+    <div class="container">
+        <div class="input">
+            Informe uma data:
+            <input id="in_data" type="date" placeholder="DD/MM/AAAA">
+            <button onclick="armazenarData()">
+                Iniciar contagem
+            </button>
         </div>
+    </div>
 </body>
+
 </html>
 <script>
     function armazenarData() {
@@ -31,15 +34,17 @@ Iniciar contagem -->
         const alvo = new Date(in_data.value);
 
         if (alvo - hoje > 0) {
-            
-        sessionStorage.DATA = in_data.value;
 
-        trocarParaContador()
+            sessionStorage.DATA = in_data.value;
 
-        }else {
+            trocarParaContador()
+
+        } else {
+
             alert("Selecione uma data que seja maior que a atual!")
+
         }
-        
+
     }
     function trocarParaContador() {
         window.location = "contador.html"

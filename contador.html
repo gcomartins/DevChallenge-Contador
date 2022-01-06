@@ -4,6 +4,7 @@ Faltam
 Dias Horas Minutos Segundos -->
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +14,13 @@ Dias Horas Minutos Segundos -->
     <link rel="stylesheet" href="css/contador.css">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1248/1248769.png" type="image/x-icon">
 </head>
+
 <body onload="atualizarCronometro()">
     <div class="header">
         <p>
-        Contador
+            Contador
         </p>
-        <button onclick = reset() >
+        <button onclick=reset()>
             Reiniciar
         </button>
     </div>
@@ -27,60 +29,61 @@ Dias Horas Minutos Segundos -->
     <div class="container">
         <div class="cont">
             <p id="dias" class="numero">
-            0
+                0
             </p>
             dias
         </div>
         <div class="cont">
             <p id="horas" class="numero">
                 0
-                </p>
-                horas
+            </p>
+            horas
         </div>
         <div class="cont">
             <p id="minutos" class="numero">
                 0
-                </p>
-                minutos
+            </p>
+            minutos
         </div>
         <div class="cont">
             <p id="segundos" class="numero">
                 0
-                </p>
-                segundos
+            </p>
+            segundos
         </div>
     </div>
     <p id="dia">
-        
+
     </p>
 </body>
+
 </html>
 <script>
-    const diaAlvo = Number(sessionStorage.DATA.at(8)+ sessionStorage.DATA.at(9));
-    const mesAlvo = Number(sessionStorage.DATA.at(5)+ sessionStorage.DATA.at(6));
-    const anoAlvo = Number(sessionStorage.DATA.at(0)+ sessionStorage.DATA.at(1) + sessionStorage.DATA.at(2)+ sessionStorage.DATA.at(3));
+    const diaAlvo = Number(sessionStorage.DATA.at(8) + sessionStorage.DATA.at(9));
+    const mesAlvo = Number(sessionStorage.DATA.at(5) + sessionStorage.DATA.at(6));
+    const anoAlvo = Number(sessionStorage.DATA.at(0) + sessionStorage.DATA.at(1) + sessionStorage.DATA.at(2) + sessionStorage.DATA.at(3));
 
-    
+
     console.log(diaAlvo, mesAlvo, anoAlvo);
 
     let dataHoje = new Date;
-    const dataAlvo = new Date (mesAlvo + '/' + diaAlvo + '/' + anoAlvo);
+    const dataAlvo = new Date(mesAlvo + '/' + diaAlvo + '/' + anoAlvo);
 
     dia.innerHTML = dataAlvo;
-    
+
     function reset() {
         window.location = "index.html"
     }
     function atualizarCronometro() {
         dataHoje = new Date;
 
-        diffSegundosDatas = (dataAlvo - dataHoje)/1000;
+        diffSegundosDatas = (dataAlvo - dataHoje) / 1000;
         // Segundos / Qtd de Segundos por dia = Qtd dias
-        diffSegundosDatas = diffSegundosDatas/86400;
+        diffSegundosDatas = diffSegundosDatas / 86400;
         dias.innerHTML = Math.trunc(diffSegundosDatas);
         // Pegar o resto
         diffSegundosDatas = diffSegundosDatas - Math.trunc(diffSegundosDatas);
-        
+
         // Resto * 24 = Qtd de Horas
         diffSegundosDatas = diffSegundosDatas * 24;
         horas.innerHTML = Math.trunc(diffSegundosDatas);
@@ -90,11 +93,11 @@ Dias Horas Minutos Segundos -->
         diffSegundosDatas = diffSegundosDatas * 60;
         minutos.innerHTML = Math.trunc(diffSegundosDatas);
         diffSegundosDatas = diffSegundosDatas - Math.trunc(diffSegundosDatas);
-        
+
         // Resto * 60 = Qtd de Segundos
         diffSegundosDatas = diffSegundosDatas * 60;
         segundos.innerHTML = Math.trunc(diffSegundosDatas);
-        
+
         setTimeout(() => {
             atualizarCronometro()
         }, 1000);
