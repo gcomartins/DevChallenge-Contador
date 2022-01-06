@@ -13,7 +13,7 @@ Dias Horas Minutos Segundos -->
     <link rel="stylesheet" href="css/contador.css">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1248/1248769.png" type="image/x-icon">
 </head>
-<body onload="setarData()">
+<body onload="atualizarCronometro()">
     <div class="header">
         <p>
         Contador
@@ -65,7 +65,7 @@ Dias Horas Minutos Segundos -->
     function reset() {
         window.location = "index.html"
     }
-    function setarData() {
+    function atualizarCronometro() {
         dataHoje = new Date;
 
         diffSegundosDatas = (dataAlvo - dataHoje)/1000;
@@ -90,7 +90,7 @@ Dias Horas Minutos Segundos -->
         segundos.innerHTML = Math.trunc(diffSegundosDatas);
         
         setTimeout(() => {
-            setarData()
+            atualizarCronometro()
         }, 1000);
 
     }
