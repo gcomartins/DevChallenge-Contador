@@ -50,18 +50,24 @@ Dias Horas Minutos Segundos -->
                 segundos
         </div>
     </div>
+    <p id="dia">
+        
+    </p>
 </body>
 </html>
 <script>
     const diaAlvo = Number(sessionStorage.DATA.at(8)+ sessionStorage.DATA.at(9));
     const mesAlvo = Number(sessionStorage.DATA.at(5)+ sessionStorage.DATA.at(6));
     const anoAlvo = Number(sessionStorage.DATA.at(0)+ sessionStorage.DATA.at(1) + sessionStorage.DATA.at(2)+ sessionStorage.DATA.at(3));
+
     
     console.log(diaAlvo, mesAlvo, anoAlvo);
 
     let dataHoje = new Date;
     const dataAlvo = new Date (mesAlvo + '/' + diaAlvo + '/' + anoAlvo);
 
+    dia.innerHTML = dataAlvo;
+    
     function reset() {
         window.location = "index.html"
     }

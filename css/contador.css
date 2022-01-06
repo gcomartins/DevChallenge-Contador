@@ -41,6 +41,14 @@ body {
     text-align: center;
 }
 
+#dia {
+    color: #191A18;
+    margin-top: 50px;
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+}
+
 .container {
     width: 100%;
     height: 40vh;

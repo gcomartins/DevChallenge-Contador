@@ -27,9 +27,18 @@ Iniciar contagem -->
 </html>
 <script>
     function armazenarData() {
+        const hoje = new Date;
+        const alvo = new Date(in_data.value);
+
+        if (alvo - hoje > 0) {
+            
         sessionStorage.DATA = in_data.value;
 
         trocarParaContador()
+
+        }else {
+            alert("Selecione uma data que seja maior que a atual!")
+        }
         
     }
     function trocarParaContador() {
